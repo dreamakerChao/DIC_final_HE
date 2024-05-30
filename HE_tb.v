@@ -1,8 +1,10 @@
+`timescale 1ns/1ns
 module HE_tb;
     // Parameters
     parameter IMAGE_WIDTH = 660;
     parameter IMAGE_HEIGHT = 440;
     parameter NUM_PIXELS = IMAGE_WIDTH * IMAGE_HEIGHT;
+    parameter clock_period = 10; //10ns
 
     // Inputs
     reg clk;
@@ -17,6 +19,12 @@ module HE_tb;
     reg [7:0] mem0 [0:NUM_PIXELS-1];
     reg [7:0] mem1 [0:NUM_PIXELS-1];
     reg [7:0] data;
+
+    // table
+    reg [7:0] transformation_table[NUM_PIXELS]; 
+
+    //temp for table
+    reg [7:0] temp;
 
     integer i, j, p;
     integer handle;
@@ -39,7 +47,7 @@ module HE_tb;
     // Clock generation
     initial begin
         clk = 0;
-        forever #5 clk = ~clk; // 100 MHz clock
+        forever #(clock_period/2) clk = ~clk; // 100 MHz clock
     end
 
     // Test stimulus
@@ -74,15 +82,20 @@ module HE_tb;
             end
         end
 
-        for (i=0; i<IMAGE_HEIGHT-1; i=i+1) begin // 0:511
-            for (j=0; j<IMAGE_WIDTH-1 ; j=j+1) begin
 
-                //pixel_value =  mem0[i*IMAGE_WIDTH+j];
-                //#30;
-                mem1[i*IMAGE_WIDTH+j] = transformed_pixel;
-                #10;
+        // start to receive      
+        wait(done);
+        for (i=0; i<NUM_PIXELS; i=i+1) begin
+            transformation_table[i] = pixel_value;
+            #(clock_period);
+        end
 
-            end
+        // receive completed
+
+        for (i=0; i<NUM_PIXELS; i=i+1) begin
+            temp = mem0[i];
+            mem1[i] = transformation_table[temp];
+            #(clock_period);
         end
 
 		#1000;
@@ -94,14 +107,10 @@ module HE_tb;
 
 		$fwrite(handle,"%h ", data);
 
-		if ( (p % IMAGE_WIDTH) == IMAGE_WIDTH-1) begin
+		    if ( (p % IMAGE_WIDTH) == IMAGE_WIDTH-1) begin
 				$fwrite(handle,"\n");
-		end
-	end
-
-
-        // Wait for done signal
-        //wait(done);
+		    end
+	    end
 
         // Add more test cases if necessary
 
