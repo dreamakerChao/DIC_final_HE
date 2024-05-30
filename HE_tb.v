@@ -21,7 +21,7 @@ module HE_tb;
     reg [7:0] data;
 
     // table
-    reg [7:0] transformation_table[NUM_PIXELS]; 
+    reg [7:0] transformation_table[18:0]; 
 
     //temp for table
     reg [7:0] temp;

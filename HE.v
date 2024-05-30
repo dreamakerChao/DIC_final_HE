@@ -32,7 +32,7 @@ module HE(
                CALC_HIST = 3'b001,
                CALC_CDF = 3'b010,
                APPLY_TRANSFORM = 3'b011,
-               FINISH = 3'b100;
+               FINISH_SEND = 3'b100;
                //SEND = 3'b101;
 
     // State machine and logic
@@ -96,7 +96,7 @@ module HE(
                         tmp  = 255*cdf[i];
                         transformation_table[i] = tmp / NUM_PIXELS; //L-1 = NUM_BINS-1 = 255
                     end
-                    current_state <= FINISH;
+                    current_state <= FINISH_SEND;
                     counter <= 0;
                 end
                 FINISH_SEND: begin
