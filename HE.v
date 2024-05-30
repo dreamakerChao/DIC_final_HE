@@ -24,12 +24,16 @@ module HE(
     // State machine states
     reg [2:0] current_state;
 
+    //counter
+    reg [18:0] counter;
+
     // State definitions
     localparam IDLE = 3'b000,
                CALC_HIST = 3'b001,
                CALC_CDF = 3'b010,
                APPLY_TRANSFORM = 3'b011,
-               FINISH = 3'b100;
+               FINISH_SEND = 3'b100;
+               //SEND = 3'b101;
 
     // State machine and logic
     always @(posedge clk or posedge reset) begin
@@ -58,7 +62,7 @@ module HE(
             case (current_state)
                 CALC_HIST: begin
 					if (pixel_count == NUM_PIXELS) begin
-                        current_state = CALC_CDF;
+                        current_state <= CALC_CDF;
                     end
 					else begin
                         histogram[pixel_value] = histogram[pixel_value] + 1;
@@ -85,18 +89,24 @@ module HE(
                     end
                     */
 
-					current_state = APPLY_TRANSFORM;
+					current_state <= APPLY_TRANSFORM;
                 end
                 APPLY_TRANSFORM: begin
                     for (i = 0; i < NUM_BINS; i = i + 1) begin
                         tmp  = 255*cdf[i];
                         transformation_table[i] = tmp / NUM_PIXELS; //L-1 = NUM_BINS-1 = 255
                     end
-                    current_state = FINISH;
+                    current_state <= FINISH_SEND;
+                    counter <= 0;
+                    
                 end
-                FINISH: begin
-					transformed_pixel <= transformation_table[pixel_value];
+                FINISH_SEND: begin
                     done <= 1'b1;
+                    if(counter < 18'd290400) begin
+                        transformed_pixel <= transformation_table[counter];
+                        counter <= counter+1;
+                    end
+                               
                 end
 
             endcase

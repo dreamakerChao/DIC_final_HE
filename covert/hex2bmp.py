@@ -1,7 +1,8 @@
 from PIL import Image
+import sys
 
 # 讀取16進制數據
-with open("pixel_hex_codes.txt", "r") as f:
+with open(sys.argv[1], "r") as f:
     hex_data = f.read()
 
 # 將16進制數據轉換為像素值列表
@@ -14,6 +15,6 @@ new_image = Image.new("L", (660, 440)) # (512,512)
 new_image.putdata(pixel_values)
 
 # 保存圖片為BMP格式
-new_image.save("new_image.bmp")
+new_image.save(f"{(sys.argv[1])[:-4]}.bmp")
 
 print("BMP圖片已保存")
