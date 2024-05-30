@@ -98,13 +98,15 @@ module HE(
                     end
                     current_state <= FINISH_SEND;
                     counter <= 0;
+                    
                 end
                 FINISH_SEND: begin
+                    done <= 1'b1;
                     if(counter < 18'd290400) begin
                         transformed_pixel <= transformation_table[counter];
+                        counter <= counter+1;
                     end
-                    counter <= counter+1;
-                    done <= 1'b1;
+                               
                 end
 
             endcase

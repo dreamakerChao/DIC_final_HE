@@ -86,8 +86,9 @@ module HE_tb;
         // start to receive      
         wait(done);
         for (i=0; i<NUM_PIXELS; i=i+1) begin
-            transformation_table[i] = pixel_value;
-            #(clock_period);
+            #(clock_period/2);
+            transformation_table[i] = transformed_pixel;
+            #(clock_period/2);
         end
 
         // receive completed
