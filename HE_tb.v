@@ -21,7 +21,7 @@ module HE_tb;
     reg [7:0] data;
 
     // table
-    reg [7:0] transformation_table[18:0]; 
+    reg [7:0] transformation_table[255:0]; 
 
     //temp for table
     reg [7:0] temp;
@@ -41,7 +41,7 @@ module HE_tb;
     // Initialize the memory
     initial begin
         $readmemh("D:/Modelsim/Hsit_t/chickens.txt", mem0);
-        $readmemh("D:/Modelsim/Hsit_t/zero512.txt", mem1);
+        $readmemh("D:/Modelsim/Hsit_t/zero_matrix.txt", mem1);
     end
 
     // Clock generation
@@ -54,7 +54,7 @@ module HE_tb;
     initial begin
         // Initialize Inputs
         reset = 1;
-        $readmemh("D:/Modelsim/Hsit_t/zero512.txt", mem1);
+        $readmemh("D:/Modelsim/Hsit_t/zero_matrix.txt", mem1);
         pixel_value = 0;
 
         // Wait for global reset
