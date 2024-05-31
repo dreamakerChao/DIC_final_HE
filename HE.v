@@ -26,6 +26,7 @@ module HE(
 
     //counter
     reg [18:0] counter;
+    reg [8:0] j_counter;
 
     // State definitions
     localparam IDLE = 3'b000,
@@ -45,7 +46,9 @@ module HE(
             //cdf_min <= 32'b0;
             //num_pixels <= 32'b0;
             transformed_pixel <= 8'b0;
-
+            j_counter<=0;
+            counter<=0;
+            
             for (i = 0; i < NUM_BINS; i = i + 1) begin
                 histogram[i] <= 16'b0;
                 cdf[i] <= 32'b0;
@@ -65,39 +68,39 @@ module HE(
                         current_state <= CALC_CDF;
                     end
 					else begin
-                        histogram[pixel_value] = histogram[pixel_value] + 1;
-                        pixel_count = pixel_count + 1;
+                        histogram[pixel_value] <= histogram[pixel_value] + 1;
+                        pixel_count <= pixel_count + 1;
 					end
+                    j_counter<=1;
                 end
 
-				// 以下需修改 ///
-                // cumulative distribution function
+               // cumulative distribution function
                 CALC_CDF: begin
 
-                    cdf[0] = histogram[0];
-                    for (j = 1; j < NUM_BINS; j = j + 1) begin
-						cdf[j] = cdf[j-1] + histogram[j];
-					end
-
-                    /*
-                    for (j = 0; j < NUM_BINS; j = j + 1) begin
-						if (j == 0) begin
-							cdf[0] = histogram[0];
-						end else begin
-							cdf[j] = cdf[j-1] + histogram[j];
-						end
+                    if(j_counter==1) begin
+                        cdf[1] <= histogram[0]+ histogram[j_counter];
+                        j_counter <= j_counter + 1;
+                    end else if(j_counter>=NUM_BINS) begin
+                        current_state <= APPLY_TRANSFORM;
+                        j_counter <= 0;
+                    end else begin
+                        current_state <= CALC_CDF;
+                        cdf[j_counter] <= cdf[j_counter-1] + histogram[j_counter];
+                        j_counter <= j_counter + 1;
                     end
-                    */
-
-					current_state <= APPLY_TRANSFORM;
+					
                 end
                 APPLY_TRANSFORM: begin
-                    for (i = 0; i < NUM_BINS; i = i + 1) begin
-                        tmp  = 255*cdf[i];
-                        transformation_table[i] = tmp / NUM_PIXELS; //L-1 = NUM_BINS-1 = 255
+                    if(j_counter>=NUM_BINS) begin
+                        current_state <= FINISH_SEND;
+                        j_counter <= 0;
+                        counter <= 0;
+                    end else begin
+                        current_state <=  APPLY_TRANSFORM;
+                        transformation_table[j_counter] <= 255*cdf[j_counter]/ NUM_PIXELS; 
+                        //L-1 = NUM_BINS-1 = 255
+                        j_counter <= j_counter + 1;
                     end
-                    current_state <= FINISH_SEND;
-                    counter <= 0;
                     
                 end
                 FINISH_SEND: begin
