@@ -102,7 +102,7 @@ module HE(
                 end
                 FINISH_SEND: begin
                     done <= 1'b1;
-                    if(counter < 18'd290400) begin
+                    if(counter < 19'd290400) begin
                         transformed_pixel <= transformation_table[counter];
                         counter <= counter+1;
                     end
