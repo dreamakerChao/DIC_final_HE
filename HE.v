@@ -14,7 +14,7 @@ module HE(
 
     // Internal registers
     reg [15:0] histogram [NUM_BINS-1:0];
-    reg [31:0] cdf [NUM_BINS-1:0];
+    reg [15:0] cdf [NUM_BINS-1:0];
     //reg [31:0] cdf_min;
     reg [31:0] tmp;
     reg [31:0] pixel_count;
@@ -97,7 +97,10 @@ module HE(
                         counter <= 0;
                     end else begin
                         current_state <=  APPLY_TRANSFORM;
-                        transformation_table[j_counter] <= 255*cdf[j_counter]/ NUM_PIXELS; 
+                        transformation_table[j_counter] <= 255*cdf[j_counter]/NUM_PIXELS; 
+                        // =255/290400 = 0.0008780992
+                        // log2(1/290400)= -18.1476819278
+                        // ~ <<8 >>18
                         //L-1 = NUM_BINS-1 = 255
                         j_counter <= j_counter + 1;
                     end
