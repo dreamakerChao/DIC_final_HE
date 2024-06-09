@@ -40,8 +40,8 @@ module HE_tb;
 
     // Initialize the memory
     initial begin
-        $readmemh("/home2/VLSI015/Test5/presim/source/chickens.txt", mem0);
-        $readmemh("/home2/VLSI015/Test5/presim/source/zero_matrix.txt", mem1);
+        $readmemh("/home2/VLSI016/Lab4/presim/source/chickens.txt", mem0);
+        $readmemh("/home2/VLSI016/Lab4/presim/source/zero_matrix.txt", mem1);
     end
 
     // Clock generation
@@ -91,7 +91,7 @@ module HE_tb;
 
 		#200;
 
-        handle = $fopen("/home2/VLSI015/Test5/presim/source/chickens_o.txt", "w");
+        handle = $fopen("/home2/VLSI016/Lab4/presim/source/chickens_o.txt", "w");
         for(p = 0; p < NUM_PIXELS; p = p + 1) begin
 		//data = (mem1[p]) ? 8'hFF : 8'h00;
 			data = mem1[p];
