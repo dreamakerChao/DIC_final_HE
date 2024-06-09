@@ -21,7 +21,7 @@ module HE_tb;
     reg [7:0] data;
 
     // table
-    reg [7:0] transformation_table[255:0]; 
+    reg [7:0] TSM [255:0]; 
 
     //temp for table
     reg [7:0] temp;
@@ -40,8 +40,8 @@ module HE_tb;
 
     // Initialize the memory
     initial begin
-        $readmemh("D:/Modelsim/Hsit_t/chickens.txt", mem0);
-        $readmemh("D:/Modelsim/Hsit_t/zero_matrix.txt", mem1);
+        $readmemh("/home2/VLSI015/Test5/presim/source/chickens.txt", mem0);
+        $readmemh("/home2/VLSI015/Test5/presim/source/zero_matrix.txt", mem1);
     end
 
     // Clock generation
@@ -54,8 +54,8 @@ module HE_tb;
     initial begin
         // Initialize Inputs
         reset = 1;
-        $readmemh("D:/Modelsim/Hsit_t/zero_matrix.txt", mem1);
         pixel_value = 0;
+		data = 8'b0;
 
         // Wait for global reset
         #100;
@@ -63,21 +63,11 @@ module HE_tb;
 
         // Load pixels into the module
 
-        /*
-        for (i = 0; i < IMAGE_WIDTH * IMAGE_HEIGHT; i = i + 1) begin
-            pixel_value = mem0[i]; // Use pixel values from memory
-            #10; // Wait for a clock cycle
-            mem1[i] = transformed_pixel;
-        end
-        */
-
         for (i=0; i<IMAGE_HEIGHT-1; i=i+1) begin // 0:511
             for (j=0; j<IMAGE_WIDTH-1 ; j=j+1) begin
 
                 pixel_value =  mem0[i*IMAGE_WIDTH+j];
                 #10;
-                //mem1[i*IMAGE_WIDTH+j] = transformed_pixel;
-                //#30;
 
             end
         end
@@ -85,32 +75,33 @@ module HE_tb;
 
         // start to receive      
         wait(done);
+		#10;
         for (i=0; i<NUM_PIXELS; i=i+1) begin
-            #(clock_period/2);
-            transformation_table[i] = transformed_pixel;
-            #(clock_period/2);
+            TSM[i] <= transformed_pixel;
+			#10;
         end
 
         // receive completed
 
         for (i=0; i<NUM_PIXELS; i=i+1) begin
             temp = mem0[i];
-            mem1[i] = transformation_table[temp];
+            mem1[i] = TSM[temp];
             #(clock_period);
         end
 
-		#1000;
+		#200;
 
-        handle = $fopen("D:/Modelsim/Hsit_t/chickens_o.txt", "w");
+        handle = $fopen("/home2/VLSI015/Test5/presim/source/chickens_o.txt", "w");
         for(p = 0; p < NUM_PIXELS; p = p + 1) begin
 		//data = (mem1[p]) ? 8'hFF : 8'h00;
-        data = mem1[p];
-
-		$fwrite(handle,"%h ", data);
-
+			data = mem1[p];
+			$fwrite(handle,"%h ", data);
+			
+			
 		    if ( (p % IMAGE_WIDTH) == IMAGE_WIDTH-1) begin
 				$fwrite(handle,"\n");
 		    end
+			#10;
 	    end
 
         // Add more test cases if necessary
