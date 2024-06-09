@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # 讀取圖片並轉換為灰度圖
-image_path = 'lena_gray.bmp'  # 替換成你的圖片路徑
+image_path = 'chickens.bmp'  # 替換成你的圖片路徑
 image = Image.open(image_path).convert('L')
 
 # 將圖片轉換為NumPy數組
