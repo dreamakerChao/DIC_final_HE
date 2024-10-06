@@ -10,11 +10,9 @@
 ![img](sim_output_pics/consume_time.png)
 
 ## introduction
-
     This is my final project done in end of the spring semester 2024. The project is to implement the Histogram Equalization algorithm in Verilog and design in IC design-compiler(modelsim, synthesis, and then primepower report).
 
 ## Histogram equalization
-
     Histogram equalization is an image processing technique used to enhance image contrast. Its primary purpose is to adjust the distribution of grayscale levels in an image, making them more uniform, thereby enhancing the overall contrast and detail of the image.
 
 ### Procedure
