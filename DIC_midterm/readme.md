@@ -24,7 +24,7 @@ Temp_y0 to temp_y2 : 計算陣列，並將結果給進Gy
 
 ### presim
 
-![img](image/readme/1728249137032.png)![img](image/readme/1728249190013.png)
+![img](sobel/syn/presim_1.png)![img](sobel/syn/presim_2.png)
 
 ### synthesis & primetime
 
