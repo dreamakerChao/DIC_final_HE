@@ -1,5 +1,9 @@
 # Final project of DIC in 112-2
 
+I collect my work in this course in the end of the Digital Integrated Design
+
+the mid-term in [DIC_midterm](DIC_midterm/readme.md)
+
 | Before                      | After                           |
 | --------------------------- | ------------------------------- |
 | ![img](./covert/chickens.bmp) | ![img](./covert/chickens_o.bmp)   |
@@ -10,9 +14,11 @@
 ![img](sim_output_pics/consume_time.png)
 
 ## introduction
+
     This is my final project done in end of the spring semester 2024. The project is to implement the Histogram Equalization algorithm in Verilog and design in IC design-compiler(modelsim, synthesis, and then primepower report).
 
 ## Histogram equalization
+
     Histogram equalization is an image processing technique used to enhance image contrast. Its primary purpose is to adjust the distribution of grayscale levels in an image, making them more uniform, thereby enhancing the overall contrast and detail of the image.
 
 ### Procedure

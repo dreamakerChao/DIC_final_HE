@@ -1,0 +1,15 @@
+E:/project/DIC_hw/hw3/kernel_tb.v {1 {vlog -work work -stats=none E:/project/DIC_hw/hw3/kernel_tb.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module kernel_tb
+
+Top level modules:
+	kernel_tb
+
+} {} {}} E:/project/DIC_hw/hw3/kernel_alu.v {1 {vlog -work work -stats=none E:/project/DIC_hw/hw3/kernel_alu.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module kernel
+
+Top level modules:
+	kernel
+
+} {} {}}

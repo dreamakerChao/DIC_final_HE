@@ -1,0 +1,80 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Programs/ModelSim
+vkernel
+Z0 !s110 1715166818
+!i10b 1
+!s100 C_0J>==IVl>GMG3W`MOAj2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I7c5n`=N>XH=@nf`211Rnk3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dE:/project/DIC_hw/hw3/modelsim
+w1715166804
+8E:/project/DIC_hw/hw3/kernel_alu.v
+FE:/project/DIC_hw/hw3/kernel_alu.v
+!i122 34
+L0 1 59
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1715166818.000000
+!s107 E:/project/DIC_hw/hw3/kernel_alu.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/project/DIC_hw/hw3/kernel_alu.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vkernel_tb
+R0
+!i10b 1
+!s100 Lk9^m454c9_?mlhcB`Rz90
+R1
+Ii;8_kNQQm=EDYgU2a65dg3
+R2
+R3
+w1715166788
+8E:/project/DIC_hw/hw3/kernel_tb.v
+FE:/project/DIC_hw/hw3/kernel_tb.v
+!i122 35
+L0 4 115
+R4
+r1
+!s85 0
+31
+R5
+!s107 E:/project/DIC_hw/hw3/kernel_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/project/DIC_hw/hw3/kernel_tb.v|
+!i113 1
+R6
+R7
+vtb_kernel
+!s110 1715054993
+!i10b 1
+!s100 ^4ATj1<WEgHj0RQ;TH9<g1
+R1
+IWOVSS@1;U29Sfc:F4=I@?1
+R2
+R3
+w1714888496
+8E:/project/DIC_hw/hw3/tb_kernel.v
+FE:/project/DIC_hw/hw3/tb_kernel.v
+!i122 1
+L0 2 25
+R4
+r1
+!s85 0
+31
+!s108 1715054993.000000
+!s107 E:/project/DIC_hw/hw3/tb_kernel.v|
+!s90 -reportprogress|300|-work|work|-stats=none|E:/project/DIC_hw/hw3/tb_kernel.v|
+!i113 1
+R6
+R7
