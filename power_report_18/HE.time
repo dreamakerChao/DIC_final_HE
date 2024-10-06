@@ -1,0 +1,87 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : HE
+Version: R-2020.09
+Date   : Tue Jun  4 16:29:30 2024
+****************************************
+
+
+  Startpoint: counter_reg[0]
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[14][18]
+               (rising edge-triggered flip-flop clocked by clk)
+  Last common pin: clk
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock clk (rise edge)                    5.00       5.00
+  clock network delay (propagated)         0.13       5.13
+  counter_reg[0]/CK (DFFRBP)               0.00       5.13 r
+  counter_reg[0]/QB (DFFRBP)               0.55 $     5.68 r
+  U29688/O (AN2)                           0.19 H     5.87 r
+  U35578/O (INV1S)                         0.15 H     6.03 f
+  U52426/O (NR2)                           0.25 H     6.27 r
+  U31708/O (INV1S)                         0.25 H     6.53 f
+  U52428/O (NR2)                           0.17 H     6.70 r
+  U52429/O (AO12)                          0.25 H     6.95 r
+  U30377/O (INV1S)                         0.09 H     7.04 f
+  U30376/O (AN2)                           0.25 H     7.29 f
+  U41501/O (AN2)                           0.27 H     7.56 f
+  U36864/O (BUF1CK)                        0.27 H     7.82 f
+  U36043/O (BUF2)                          0.26 H     8.08 f
+  U36962/O (BUF1CK)                        0.26 H     8.34 f
+  U36315/O (BUF2)                          0.25 H     8.59 f
+  U41525/O (AO222)                         0.30 H     8.89 f
+  U41526/O (AN4B1S)                        0.16 H     9.05 r
+  U41527/O (OAI22S)                        0.11 H     9.17 f
+  U41528/O (NR2)                           0.18 H     9.34 r
+  U35475/O (OAI222H)                       0.15 H     9.49 f
+  add_91/U1/O (AN2)                        0.20 H     9.69 f
+  add_91/U1_1/CO (FA1)                     0.21 H     9.90 f
+  add_91/U1_2/CO (FA1)                     0.22 H    10.12 f
+  add_91/U1_3/CO (FA1)                     0.22 H    10.34 f
+  add_91/U1_4/CO (FA1)                     0.22 H    10.55 f
+  add_91/U1_5/CO (FA1)                     0.22 H    10.77 f
+  add_91/U1_6/CO (FA1)                     0.22 H    10.99 f
+  add_91/U1_7/CO (FA1)                     0.22 H    11.20 f
+  add_91/U1_8/CO (FA1)                     0.22 H    11.42 f
+  add_91/U1_9/CO (FA1)                     0.22 H    11.64 f
+  add_91/U1_10/CO (FA1)                    0.22 H    11.86 f
+  add_91/U1_11/CO (FA1)                    0.22 H    12.07 f
+  add_91/U1_12/CO (FA1)                    0.22 H    12.29 f
+  add_91/U1_13/CO (FA1)                    0.23 H    12.52 f
+  add_91/U4/O (AN2)                        0.17 H    12.69 f
+  add_91/U2/O (AN2)                        0.17 H    12.86 f
+  add_91/U3/O (AN2)                        0.17 H    13.02 f
+  add_91/U5/O (AN2)                        0.15 H    13.18 f
+  add_91/U6/O (XOR2HS)                     0.10 H    13.28 r
+  U31297/O (ND2)                           0.17 H    13.44 f
+  U31649/O (BUF6)                          0.21 H    13.65 f
+  U11692/O (INV3)                          0.26 H    13.91 r
+  U11693/O (INV8CK)                        0.18 H    14.09 f
+  U35489/O (MOAI1S)                        0.30 H    14.39 r
+  U30284/O (BUF1CK)                        0.14 H    14.53 r
+  cdf_reg[14][18]/D (QDFFN)                0.00 *    14.53 r
+  data arrival time                                  14.53
+
+  clock clk (rise edge)                   15.00      15.00
+  clock network delay (propagated)         0.13      15.13
+  clock reconvergence pessimism            0.00      15.13
+  clock uncertainty                       -0.50      14.63
+  cdf_reg[14][18]/CK (QDFFN)                         14.63 r
+  library setup time                      -0.05      14.57
+  data required time                                 14.57
+  ---------------------------------------------------------------
+  data required time                                 14.57
+  data arrival time                                 -14.53
+  ---------------------------------------------------------------
+  slack (MET)                                         0.04
+
+
+1

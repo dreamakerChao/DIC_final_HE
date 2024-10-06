@@ -1,0 +1,810 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'HE' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+        -sort_by group
+Design : HE
+Version: R-2020.09
+Date   : Tue Jun  4 16:22:30 2024
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: TCCOM   Library: fsa0m_a_generic_core_tt1p8v25c
+Wire Load Model Mode: enclosed
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[14][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35489/O (MOAI1S)                       0.295     14.719 r
+  U30284/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[14][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[14][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[62][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35444/O (MOAI1S)                       0.295     14.719 r
+  U30267/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[62][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[62][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[58][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35390/O (MOAI1S)                       0.295     14.719 r
+  U30263/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[58][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[58][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[54][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35387/O (MOAI1S)                       0.295     14.719 r
+  U30257/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[54][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[54][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[50][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35356/O (MOAI1S)                       0.295     14.719 r
+  U30253/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[50][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[50][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[38][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35273/O (MOAI1S)                       0.295     14.719 r
+  U30236/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[38][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[38][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[35][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35270/O (MOAI1S)                       0.295     14.719 r
+  U30233/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[35][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[35][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[26][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35265/O (MOAI1S)                       0.295     14.719 r
+  U30220/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[26][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[26][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[22][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35261/O (MOAI1S)                       0.295     14.719 r
+  U30216/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[22][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[22][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+  Startpoint: counter_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: cdf_reg[18][18]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  HE                 enG200K               fsa0m_a_generic_core_tt1p8v25c
+  HE_DW01_add_0      enG5K                 fsa0m_a_generic_core_tt1p8v25c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                   5.000      5.000
+  clock network delay (ideal)             0.500      5.500
+  counter_reg[0]/CK (DFFRBP)              0.000 #    5.500 r
+  counter_reg[0]/QB (DFFRBP)              0.530      6.030 r
+  U29688/O (AN2)                          0.194      6.224 r
+  U35578/O (INV1S)                        0.151      6.375 f
+  U52426/O (NR2)                          0.249      6.624 r
+  U31708/O (INV1S)                        0.251      6.875 f
+  U52428/O (NR2)                          0.172      7.047 r
+  U52429/O (AO12)                         0.246      7.292 r
+  U30377/O (INV1S)                        0.092      7.384 f
+  U30376/O (AN2)                          0.250      7.634 f
+  U41501/O (AN2)                          0.266      7.900 f
+  U36864/O (BUF1CK)                       0.265      8.165 f
+  U36043/O (BUF2)                         0.259      8.424 f
+  U36962/O (BUF1CK)                       0.262      8.686 f
+  U36315/O (BUF2)                         0.247      8.933 f
+  U41525/O (AO222)                        0.301      9.234 f
+  U41526/O (AN4B1S)                       0.160      9.393 r
+  U41527/O (OAI22S)                       0.112      9.506 f
+  U41528/O (NR2)                          0.178      9.684 r
+  U35475/O (OAI222H)                      0.148      9.832 f
+  add_91/A[0] (HE_DW01_add_0)             0.000      9.832 f
+  add_91/U1/O (AN2)                       0.199     10.031 f
+  add_91/U1_1/CO (FA1)                    0.211     10.241 f
+  add_91/U1_2/CO (FA1)                    0.217     10.458 f
+  add_91/U1_3/CO (FA1)                    0.217     10.675 f
+  add_91/U1_4/CO (FA1)                    0.217     10.892 f
+  add_91/U1_5/CO (FA1)                    0.216     11.108 f
+  add_91/U1_6/CO (FA1)                    0.217     11.325 f
+  add_91/U1_7/CO (FA1)                    0.217     11.542 f
+  add_91/U1_8/CO (FA1)                    0.217     11.759 f
+  add_91/U1_9/CO (FA1)                    0.217     11.976 f
+  add_91/U1_10/CO (FA1)                   0.217     12.193 f
+  add_91/U1_11/CO (FA1)                   0.217     12.410 f
+  add_91/U1_12/CO (FA1)                   0.217     12.627 f
+  add_91/U1_13/CO (FA1)                   0.229     12.856 f
+  add_91/U4/O (AN2)                       0.174     13.030 f
+  add_91/U2/O (AN2)                       0.165     13.195 f
+  add_91/U3/O (AN2)                       0.165     13.361 f
+  add_91/U5/O (AN2)                       0.154     13.515 f
+  add_91/U6/O (XOR2HS)                    0.096     13.611 r
+  add_91/SUM[18] (HE_DW01_add_0)          0.000     13.611 r
+  U31297/O (ND2)                          0.166     13.777 f
+  U31649/O (BUF6)                         0.212     13.989 f
+  U11692/O (INV3)                         0.255     14.244 r
+  U11693/O (INV8CK)                       0.180     14.424 f
+  U35259/O (MOAI1S)                       0.295     14.719 r
+  U30210/O (BUF1CK)                       0.142     14.861 r
+  cdf_reg[18][18]/D (QDFFN)               0.000     14.861 r
+  data arrival time                                 14.861
+
+  clock clk (rise edge)                  15.000     15.000
+  clock network delay (ideal)             0.500     15.500
+  clock uncertainty                      -0.500     15.000
+  cdf_reg[18][18]/CK (QDFFN)              0.000     15.000 r
+  library setup time                     -0.046     14.954
+  data required time                                14.954
+  -----------------------------------------------------------
+  data required time                                14.954
+  data arrival time                                -14.861
+  -----------------------------------------------------------
+  slack (MET)                                        0.093
+
+
+1

@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : area
+Design : HE
+Version: R-2020.09
+Date   : Tue Jun  4 16:22:30 2024
+****************************************
+
+Library(s) Used:
+
+    fsa0m_a_generic_core_tt1p8v25c (File: /home/cad/tech/CBDK018_UMC_Faraday_v1.1/CIC/SynopsysDC/db/fsa0m_a_generic_core_tt1p8v25c.db)
+
+Number of ports:                          259
+Number of nets:                         51781
+Number of cells:                        51488
+Number of combinational cells:          40945
+Number of sequential cells:             10537
+Number of macros/black boxes:               0
+Number of buf/inv:                      15520
+Number of references:                      96
+
+Combinational area:             693199.384099
+Buf/Inv area:                   208474.154486
+Noncombinational area:          560170.408318
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (Wire load has zero net area)
+
+Total cell area:               1253369.792417
+Total area:                 undefined
+1
